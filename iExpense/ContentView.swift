@@ -66,11 +66,11 @@ struct ContentView: View {
                                 }
                             }
                         }
-                        .onDelete(perform: removeItems)
                     }header: {
                         Text(type.uppercased())
                     }
                 }
+                .onDelete(perform: removeItems)
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -83,6 +83,8 @@ struct ContentView: View {
                 NavigationLink(destination: AddView(expenses: expenses)) {
                     Image(systemName: "plus")
                 }
+                
+                EditButton()
             }
             /** Para mostrar la ventana de agregar gastos como una hoja */
             //.sheet(isPresented: $showingAddExpense) {
